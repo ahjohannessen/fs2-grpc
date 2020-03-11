@@ -50,7 +50,7 @@ jobs:
         if: env.HEAD_TAG != ''
 
       - name: publish plugin
-        run: sbt ++2.12.10 "sbt-java-gen/ci-release"
+        run: sbt ++2.12.10 "project sbt-java-gen; ci-release;"
         if: env.HEAD_TAG != ''
         env:
           CI_RELEASE: publishSigned
