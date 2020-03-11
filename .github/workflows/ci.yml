@@ -61,7 +61,7 @@ jobs:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
 
       - name: publish runtime
-        run: sbt "java-runtime/ci-release"
+        run: sbt "project java-runtime; ci-release;"
         if: env.HEAD_TAG != ''
         env:
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
