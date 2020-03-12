@@ -4,7 +4,7 @@ object Dependencies {
 
   object versions {
 
-    val grpc = scalapb.compiler.Version.grpcJavaVersion
+    val grpc = "1.28.0"
     val scalaPb = scalapb.compiler.Version.scalapbVersion
     val fs2 = "2.2.2"
     val catsEffect = "2.1.2"
@@ -19,7 +19,7 @@ object Dependencies {
 
   val fs2 = "co.fs2" %% "fs2-core" % versions.fs2
   val catsEffect = "org.typelevel" %% "cats-effect" % versions.catsEffect
-  val grpcCore = "io.grpc" % "grpc-core" % versions.grpc
+  val grpcApi = "io.grpc" % "grpc-api" % versions.grpc
 
   // Testing
 

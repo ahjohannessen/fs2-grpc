@@ -6,9 +6,11 @@ inThisBuild(
     organization := "org.lyranthe.fs2-grpc",
     git.useGitDescribe := true,
     scmInfo := Some(ScmInfo(url("https://github.com/fiadliel/fs2-grpc"), "git@github.com:fiadliel/fs2-grpc.git"))
-  ))
+  )
+)
 
-lazy val root = project.in(file("."))
+lazy val root = project
+  .in(file("."))
   .enablePlugins(GitVersioning, BuildInfoPlugin)
   .settings(
     sonatypeProfileName := "org.lyranthe",
@@ -50,7 +52,7 @@ lazy val `java-runtime` = project
     scalaVersion := "2.13.1",
     crossScalaVersions := List(scalaVersion.value, "2.12.10"),
     publishTo := sonatypePublishToBundle.value,
-    libraryDependencies ++= List(fs2, catsEffect, grpcCore) ++ List(grpcNetty, catsEffectLaws, minitest).map(_  % Test),
+    libraryDependencies ++= List(fs2, catsEffect, grpcApi) ++ List(grpcNetty, catsEffectLaws, minitest).map(_ % Test),
     mimaPreviousArtifacts := Set(organization.value %% name.value % "0.3.0"),
     Test / parallelExecution := false,
     testFrameworks += new TestFramework("minitest.runner.Framework"),
