@@ -40,6 +40,14 @@ lazy val `sbt-java-gen` = project
     sbtPlugin := true,
     crossSbtVersions := List(sbtVersion.value),
     buildInfoPackage := "org.lyranthe.fs2_grpc.buildinfo",
+    buildInfoKeys := Seq[BuildInfoKey](
+      name,
+      version,
+      scalaVersion,
+      sbtVersion,
+      organization,
+      "grpcVersion" -> versions.grpc
+    ),
     addSbtPlugin(sbtProtoc),
     libraryDependencies += scalaPbCompiler
   )
