@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-    - master
+    - ahj-master
     tags:
     - "v*"
   pull_request:

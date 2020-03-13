@@ -3,7 +3,7 @@ import Dependencies._
 inThisBuild(
   List(
     scalaVersion := "2.13.2",
-    organization := "org.lyranthe.fs2-grpc",
+    organization := "io.github.ahjohannessen",
     git.useGitDescribe := true,
     scmInfo := Some(ScmInfo(url("https://github.com/fiadliel/fs2-grpc"), "git@github.com:fiadliel/fs2-grpc.git"))
   )
@@ -13,7 +13,6 @@ lazy val root = project
   .in(file("."))
   .enablePlugins(BuildInfoPlugin)
   .settings(
-    sonatypeProfileName := "org.lyranthe",
     skip in publish := true,
     pomExtra in Global := {
       <url>https://github.com/fiadliel/fs2-grpc</url>
