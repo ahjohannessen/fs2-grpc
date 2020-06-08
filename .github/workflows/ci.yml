@@ -11,6 +11,7 @@ on:
 jobs:
 
   test:
+    if: "false"
 
     runs-on: ubuntu-latest
 
@@ -51,6 +52,7 @@ jobs:
 
       - name: publish plugin
         run: sbt ++2.12.10 "project sbt-java-gen; ci-release;"
+        if: "false"
         env:
           CI_RELEASE: publishSigned
           CI_SNAPSHOT_RELEASE: publish
